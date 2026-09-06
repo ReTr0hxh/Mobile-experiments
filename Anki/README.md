@@ -1,52 +1,42 @@
-# 🍅 FocusFlow - Assistente de Produtividade
+# 📱 AnkiDroid - Flashcards e Repetição Espaçada
 
-O **FocusFlow** é um aplicativo mobile baseado na técnica Pomodoro, desenvolvido para ajudar no gerenciamento de tempo e foco. Além de alternar entre ciclos de trabalho e descanso, o app recompensa o usuário com frases motivacionais consumidas de uma API externa a cada pausa.
+O **AnkiDroid** é um aplicativo mobile construído para otimizar o seu processo de memorização e estudos através da organização em baralhos dinâmicos.
 
 ---
 
 ## ✨ Funcionalidades
 
-* **Cronômetro Dinâmico:** Ciclos de foco de 25 minutos e pausas de 5 minutos.
-* **Contador de Ciclos:** Rastreamento automático de ciclos completados, com um limite de segurança de 10 ciclos diários para evitar burnout.
-* **Recompensas via API:** Consumo da *AdviceSlip API* para exibir conselhos aleatórios em inglês toda vez que um ciclo de foco é concluído.
-* **UI Responsiva e Temática:** Mudança automática da cor de fundo (feedback visual) indicando se o usuário está no modo de Foco ou de Pausa.
-* **Controles Totais:** Botões para Iniciar, Pausar e Avançar (`->`) o ciclo atual.
+* **Gestão de Baralhos:** Visualização e organização de decks de estudo personalizados com contagem de cartas.
+* **Repetição Espaçada:** Estrutura pronta para revisar cartas no momento ideal de fixação na memória.
+* **Persistência Local:** Salvamento do seu progresso e dos dados diretamente no dispositivo (via AsyncStorage).
+* **UI Responsiva e Limpa:** Interface direta ao ponto, estilizada de forma nativa e focada na experiência do usuário.
 
 ---
 
 ## 🛠️ Tecnologias e Conceitos Aplicados
 
-Este projeto foi construído com **React Native** e JavaScript, focando em aprofundar os seguintes conceitos:
+Este projeto faz parte do monorepo **Mobile-experiments**, construído com foco em componentização, listas performáticas e persistência de dados.
 
-* **Gerenciamento de Estado:** Uso intensivo do Hook `useState` para controlar o tempo, ciclos e renderização condicional da interface.
-* **Manipulação de Tempo:** Controle assíncrono usando `setInterval` e `clearInterval` para garantir a precisão do cronômetro sem vazamentos de memória.
-* **Consumo de APIs Externas:** Uso de funções assíncronas (`async/await`) e `fetch` para buscar dados na web.
-* **Tratamento de Cache:** Implementação de `Math.random()` nos parâmetros da URL para evitar respostas em cache da API.
-* **UX/UI Conditional Rendering:** Ocultação e exibição de botões e mudança de estilos (operador ternário) baseados no estado atual do app.
+* **React Native (Expo):** Framework principal para desenvolvimento da interface mobile.
+* **Gerenciamento de Estado:** Uso intensivo de `useState` e `useEffect` para controle lógico.
+* **Renderização Eficiente:** Utilização de `FlatList` para renderizar múltiplos baralhos sem perda de performance.
+* **Armazenamento de Dados:** Aplicação do `AsyncStorage` para manter as informações salvas offline.
 
 ---
 
 ## 🚀 Como rodar o projeto localmente
 
 1. Clone este repositório:
-```bash
-git clone https://github.com/ReTr0hxh/FocusFlow.git
-```
+git clone https://github.com/ReTr0hxh/Mobile-experiments.git
 
 2. Acesse a pasta do projeto:
-```bash
-cd FocusFlow-App
-```
+cd AnkiDroid
 
 3. Instale as dependências:
-```bash
 npm install
-```
 
 4. Rode o aplicativo:
-```bash
-npx expo start 
-```
+npx expo start
 
 ---
-*Projeto desenvolvido como parte dos estudos de aprimoramento em React Native.*
+*Desenvolvido com dedicação por [ReTr0hxh](https://github.com/ReTr0hxh).*
