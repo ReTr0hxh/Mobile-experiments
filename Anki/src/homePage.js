@@ -1,11 +1,14 @@
-import React from 'react';
-import { View, StyleSheet, Text, TouchableOpacity, Image} from 'react-native';
+import React, {useState} from 'react';
+import { View, StyleSheet, Text, TouchableOpacity, Image, Modal} from 'react-native';
+
+import AddCard from '../src/addCard'
 
 export default function Home() {
+  const [modalVisible, setModalVisible] = useState(false)
 
   return (
     <View style={styles.container}>
-        <View style={styles.cabecalho}>  //Cabeçalho
+        <View style={styles.cabecalho}>  {/*Cabeçalho*/}
             <TouchableOpacity>
                 <Image 
                     source={require('../src/img/tracinho.png')}
@@ -30,20 +33,27 @@ export default function Home() {
             </TouchableOpacity>
         </View>
 
-        <View style={styles.Home}> //Home
+        <View style={styles.Home}> {/*Home*/}
           <View style={styles.viewCriarCard}>
-            <TouchableOpacity style={styles.btnCriarCard}> //Criador flashcard
+            <TouchableOpacity style={styles.btnCriarCard} onPress={()=> setModalVisible(true)}>
               <Image
                 source={require('../src/img/plus.png')}
-                style={{width: 30, height: 30}}
+                style={{width: 20, height: 20}}
               />
             </TouchableOpacity>
+
+            <Modal visible={modalVisible} animationType="slide" transparent={true}>
+              <AddCard onClose={()=>setModalVisible(false)}/>
+            </Modal>
+
+
           </View>
         </View>
 
-        <View style={styles.rodape}> //rodapé
+        <View style={styles.rodape}> {/*Rodapé*/}
           <Text style={styles.rodapeText}>Studied 0 cards in 0 seconds today (0s/cards)</Text>
         </View>
+
     </View>
   );
 }
